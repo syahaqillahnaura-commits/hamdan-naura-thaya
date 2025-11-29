@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>August Dental Check - Deteksi AI & Konsultasi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>August Dental Check 🦷</h1>
+        <p>Deteksi cepat penyakit gigi didukung oleh August AI.</p>
+    </header>
+
+    <main>
+        <section id="ai-scanner">
+            <h2>1. Deteksi Cepat dengan Kamera 📸</h2>
+            <div class="card">
+                <label for="fileInput" class="upload-area">
+                    Klik untuk Unggah atau Ambil Foto Gigi
+                    <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
+                </label>
+                <img id="imagePreview" src="#" alt="Pratinjau Gambar" style="display: none;">
+                <button id="analyzeBtn" onclick="runAISimulation()">Mulai Analisis August AI</button>
+            </div>
+            
+            <div id="aiResult" class="result-area">
+                <h3>Hasil Analisis August AI:</h3>
+                <p id="statusMessage">Unggah gambar untuk memulai analisis.</p>
+                <div id="aiDetail" style="display: none;">
+                    <p><strong>Diagnosis Indikatif:</strong> <span id="diagnosis"></span></p>
+                    <p><strong>Tingkat Risiko:</strong> <span id="risiko"></span></p>
+                    <p><strong>Rekomendasi August AI:</strong> <span id="rekomendasi"></span></p>
+                    <button class="consult-btn" onclick="document.getElementById('konsultasi').scrollIntoView({ behavior: 'smooth' })">Lanjutkan ke Konsultasi</button>
+                </div>
+                <p class="disclaimer">⚠️ Hasil ini bukan diagnosis medis. Konsultasikan dengan dokter gigi profesional.</p>
+            </div>
+        </section>
+
+        <section id="konsultasi">
+            <h2>2. Konsultasi Online 💬</h2>
+            <div class="card">
+                <p>Chat langsung dengan **August AI** untuk pemeriksaan gejala awal, atau jadwalkan konsultasi video dengan dokter kami.</p>
+                
+                <div id="chatWindow">
+                    <div id="chatDisplay">
+                        <div class="ai-message">Halo! Saya August AI. Silakan masukkan gejala tambahan atau pertanyaan Anda.</div>
+                    </div>
+                    <input type="text" id="userInput" placeholder="Ketik gejala Anda di sini...">
+                    <button onclick="sendUserMessage()">Kirim</button>
+                </div>
+                
+                <hr>
+                
+                <button class="consult-btn">Jadwalkan Video Konsultasi Dokter</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 August Dental Check - Prototipe AI.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
